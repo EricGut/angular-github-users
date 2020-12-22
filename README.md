@@ -1,6 +1,10 @@
 # Github users
 
-This application is created in Angular. It allows to fetch github users data through an Rest API.
+## NOT FINISHED
+
+This application is created in Angular. It allows to fetch github users data through a Rest API.
+
+### Example
 
 ### Instalation
 
