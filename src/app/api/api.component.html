@@ -1,0 +1,17 @@
+<section class="users">
+  <div class="container">
+    <div class="users__content">
+      <h1>Usuarios</h1>
+      <div class="search-user">
+        <h2>Buscar un usuario</h2>
+        <input type="text" placeholder="Buscar..." />
+      </div>
+      <ul class="users-list" *ngIf="users">
+        <li class="users-list__user" *ngFor="let user of users">
+          <img src="{{ user.avatar_url }}" alt="" />
+          <a href="{{ user.html_url }}" target="__blank">{{ user.login }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
