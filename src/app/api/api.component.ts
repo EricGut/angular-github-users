@@ -7,6 +7,8 @@ import {HttpService} from '../http.service';
 })
 export class ApiComponent implements OnInit {
 
+  public keyword = "login"
+
   users: Object;
 
   constructor(private _http: HttpService) { }
@@ -15,8 +17,6 @@ export class ApiComponent implements OnInit {
     this._http.getApiData().subscribe(data => {
       this.users = data['items'];
     });
-
-    console.log(this.users);
     
   }
 

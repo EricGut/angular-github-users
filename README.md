@@ -4,8 +4,6 @@
 
 This application is created in Angular. It allows to fetch github users data through a Rest API.
 
-### Example
-
 ### Instalation
 
 ```bash

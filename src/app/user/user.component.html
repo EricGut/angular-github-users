@@ -1,0 +1,24 @@
+<section class="user-profile">
+  <div class="container">
+    <div class="user-profile__content">
+      <div *ngIf="user; else loading">
+        <div class="user-info">
+          <div class="user-info__main">
+            <div class="user-info__main__user-main">
+              <img src="{{ user.avatar_url }}" alt="" />
+              <div class="user-names">
+                <h1>{{ user.login }}</h1>
+                <h2>{{ user.name }}</h2>
+              </div>
+            </div>
+            <div class="user-info__main__user-followstat">
+              <p>Followers: {{ user.followers }}</p>
+              <p>Siguiendo: {{ user.following }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #loading><app-loading></app-loading></ng-template>
+    </div>
+  </div>
+</section>

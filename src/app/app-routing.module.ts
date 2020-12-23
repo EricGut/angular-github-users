@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import {HomeComponent} from './home/home.component';
 import {ApiComponent} from './api/api.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'api', component: ApiComponent},
+  {path: 'user/:user', component: UserComponent},
 ];
 
 @NgModule({

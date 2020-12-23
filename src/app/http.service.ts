@@ -10,6 +10,9 @@ export class HttpService {
 
   getApiData(){
     return this.http.get('https://api.github.com/search/users?q=YOUR_NAME');
-    
+  }
+
+  getUserData(user:string){
+    return this.http.get(`https://api.github.com/users/${user}`);
   }
 }

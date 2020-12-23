@@ -1,17 +1,44 @@
 <section class="users">
   <div class="container">
-    <div class="users__content">
+    <div class="users__content" *ngIf="users; else loading">
       <h1>Usuarios</h1>
-      <div class="search-user">
-        <h2>Buscar un usuario</h2>
-        <input type="text" placeholder="Buscar..." />
+      <div class="users-grid">
+        <div class="search-user">
+          <h2>Buscar un usuario</h2>
+          <div class="ng-autocomplete">
+            <ng-autocomplete
+              [data]="users"
+              [searchKeyword]="keyword"
+              [itemTemplate]="itemTemplate"
+              [notFoundTemplate]="notFoundTemplate"
+              placeHolder="Buscar..."
+            ></ng-autocomplete>
+          </div>
+          <ng-template #itemTemplate let-item>
+            <a href="user/{{ item.login }}" class="search-user">
+              <img src="{{ item.avatar_url }}" alt="{{ item.login }}" />
+              <div class="search-user__info">
+                <a [innerHTML]="item.login"></a>
+                <p>{{ item.id }}</p>
+              </div>
+            </a>
+          </ng-template>
+
+          <ng-template #notFoundTemplate let-notFound>
+            <div [innerHTML]="notFound"></div>
+          </ng-template>
+        </div>
+        <div>
+          <h2>Todos los usuarios</h2>
+          <ul class="users-list">
+            <li class="users-list__user" *ngFor="let user of users">
+              <img src="{{ user.avatar_url }}" alt="" />
+              <a href="user/{{ user.login }}">{{ user.login }}</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <ul class="users-list" *ngIf="users">
-        <li class="users-list__user" *ngFor="let user of users">
-          <img src="{{ user.avatar_url }}" alt="" />
-          <a href="{{ user.html_url }}" target="__blank">{{ user.login }}</a>
-        </li>
-      </ul>
     </div>
+    <ng-template #loading><app-loading></app-loading></ng-template>
   </div>
 </section>

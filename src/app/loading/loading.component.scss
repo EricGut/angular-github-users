@@ -1,0 +1,25 @@
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba($color: #000000, $alpha: 0.4);
+  display: grid;
+  place-items: center;
+
+  &-spiner {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    border: 1em solid rgb(190, 190, 190);
+    border-top: 1em solid #000000;
+    animation: spin 0.5s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
