@@ -33,7 +33,10 @@
     }
   }
   .users-list {
+    width: 25em;
     margin-top: 2em;
+    max-height: 50vh;
+    overflow: auto;
     &__user {
       display: flex;
       align-items: center;

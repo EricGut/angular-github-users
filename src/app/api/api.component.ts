@@ -15,7 +15,7 @@ export class ApiComponent implements OnInit {
 
   ngOnInit(): void {
     this._http.getApiData().subscribe(data => {
-      this.users = data['items'];
+      this.users = data;
     });
     
   }

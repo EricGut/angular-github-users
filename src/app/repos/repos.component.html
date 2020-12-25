@@ -1,1 +1,10 @@
-<p>repos works!</p>
+<div class="user-repos" *ngIf="repos; else loading">
+  <h1>Repositorios</h1>
+  <div class="user-repos__grid">
+    <div class="repo-item" *ngFor="let repo of repos">
+      <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+      <p>{{ repo.description }}</p>
+    </div>
+  </div>
+</div>
+<ng-template #loading><app-loading></app-loading></ng-template>

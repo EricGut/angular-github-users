@@ -9,10 +9,14 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   getApiData(){
-    return this.http.get('https://api.github.com/search/users?q=YOUR_NAME');
+    return this.http.get('https://api.github.com/users');
   }
 
   getUserData(user:string){
     return this.http.get(`https://api.github.com/users/${user}`);
+  }
+
+  getUserRepos(user:string){
+    return this.http.get(`https://api.github.com/users/${user}/repos`);
   }
 }
