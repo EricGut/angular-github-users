@@ -1,7 +1,7 @@
 # Github users
 
 This application is created in Angular. It allows to fetch github users data through a Rest API,
-search users and overview his profile.
+search users and overview the profile.
 
 ### Instalation
 
